@@ -41,8 +41,8 @@ app.use(function(req, res, next) {
     }
 });
 
-app.use('/admin/menu/', checkSignIn, menuRouter);
-app.use('/admin/recipie/', checkSignIn, recipieRouter); 
+//app.use('/admin/menu/', cors, menuRouter);
+app.use('/admin/recipie/', recipieRouter); 
 
 app.listen(port, () => {
     console.log('Server is running on port: $(port)');
