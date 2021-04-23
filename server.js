@@ -41,7 +41,7 @@ app.use(function(req, res, next) {
     }
 });
 
-//app.use('/admin/menu/', cors, menuRouter);
+app.use('/admin/menu/', menuRouter);
 app.use('/admin/recipie/', recipieRouter); 
 
 app.listen(port, () => {
