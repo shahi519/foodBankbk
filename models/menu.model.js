@@ -3,6 +3,7 @@ const Recipie = require('./recipie.model');
 const Schema = mongoose.Schema;
 
 const menuSchema = new Schema({
+    owner: {type: mongoose.Schema.Types.ObjectId, required: true},
     week: {type: Number, required: true},
     year: {type: Number, required: true},
     m1: {type: Recipie.schema},

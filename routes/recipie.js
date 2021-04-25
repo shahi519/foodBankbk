@@ -27,6 +27,7 @@ router.route('/:search').get((req,res,next) => {
 });
 
 router.route('/add').post((req,res) => {
+    const owner = req.body.owner;
     const name = req.body.name;
     const cuisine = req.body.cuisine;
     const meal = req.body.meal;// 0: All 1: Sauce and Preps 2: Appetizer 3: Main 4: Dessert 
@@ -39,6 +40,7 @@ router.route('/add').post((req,res) => {
     const cal = req.body.cal;
 
     const newRecipie = new Recipie({
+        owner,
         name,
         cuisine,
         meal,

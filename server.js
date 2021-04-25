@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const menuRouter = require('./routes/menu');
 const recipieRouter = require('./routes/recipie');
+const userRouter = require('./routes/user');
 
 require('dotenv').config();
 const app = express();
@@ -43,6 +44,8 @@ app.use(function(req, res, next) {
 
 app.use('/admin/menu/', menuRouter);
 app.use('/admin/recipie/', recipieRouter); 
+app.use('/admin/', userRouter); 
+
 
 app.listen(port, () => {
     console.log('Server is running on port: $(port)');

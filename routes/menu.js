@@ -8,6 +8,7 @@ router.route('/').get((req,res,next) => {
 });
 
 router.route('/add').post((req,res) => {
+    const owner = ObjectId("6084d2e4629c470e342dc82a");
     const week = req.body.week;
     const year = req.body.year;
     const m1 = req.body.m1;
@@ -40,6 +41,7 @@ router.route('/add').post((req,res) => {
     const su4 = req.body.su4;
 
     const newMenu = new Menu({
+        owner,
         week,
         year,
         m1,
